@@ -11,8 +11,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'marijnh/tern_for_vim'
 
 call vundle#end()
 filetype plugin indent on
 
+:colorscheme moss
 
