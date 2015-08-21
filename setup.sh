@@ -5,4 +5,6 @@ git submodule update
 vim +BundleInstall +qall
 cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
+cd ~/.vim/bundle/tern_for_vim
+npm install
 
