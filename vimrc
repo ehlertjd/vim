@@ -33,6 +33,9 @@ set wildignore+=*/bin/*,*/node_modules/*
 syntax on
 set backspace=indent,eol,start
 
+autocmd FileType python setlocal noexpandtab
+autocmd FileType python setlocal tabstop=4
+autocmd FileType python setlocal shiftwidth=4
 
 " Ctrl-P Config
 let g:ctrlp_clear_cache_on_exit = 0
