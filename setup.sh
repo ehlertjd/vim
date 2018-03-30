@@ -1,5 +1,6 @@
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
+mkdir -p backup
 git submodule init
 git submodule update
 vim +BundleInstall +qall
