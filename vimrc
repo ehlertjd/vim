@@ -52,6 +52,12 @@ autocmd Filetype sh setlocal tabstop=8
 autocmd Filetype sh setlocal softtabstop=4 
 autocmd Filetype sh setlocal shiftwidth=4 
 
+" json
+autocmd Filetype json setlocal expandtab
+autocmd Filetype json setlocal tabstop=8
+autocmd Filetype json setlocal softtabstop=4
+autocmd Filetype json setlocal shiftwidth=4
+
 " YouCompleteMe
 let g:ycm_semantic_triggers = { 'r' : ['::', '$', '@'] }
 
@@ -85,6 +91,12 @@ autocmd FileType yaml setlocal expandtab
 autocmd FileType yaml setlocal tabstop=2
 autocmd FileType yaml setlocal softtabstop=2
 autocmd FileType yaml setlocal shiftwidth=2
+
+" javascript config
+autocmd FileType javascript setlocal expandtab
+autocmd FileType javascript setlocal tabstop=2
+autocmd FileType javascript setlocal softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2
 
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
