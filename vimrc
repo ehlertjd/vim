@@ -19,6 +19,8 @@ Plugin 'valloric/youcompleteme'
 Plugin 'lazywei/vim-matlab'
 Plugin 'jalvesaq/Nvim-R'
 Plugin 'csexton/trailertrash.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -41,12 +43,22 @@ set number relativenumber
 syntax on
 set backspace=indent,eol,start
 
+set list
+set listchars=tab:▸\ 
+
+" Set mapleader
+let mapleader = "\<Space>"
+
+" Global scripts
+source ~/.vim/scripts/global.vim
+
 " Python
 autocmd FileType python setlocal expandtab
 autocmd FileType python setlocal tabstop=8
 autocmd FileType python setlocal softtabstop=4
 autocmd FileType python setlocal shiftwidth=4
 autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
+autocmd FileType python source ~/.vim/scripts/python.vim
 
 " bash/sh
 autocmd Filetype sh setlocal expandtab
@@ -66,6 +78,7 @@ let g:ycm_semantic_triggers = { 'r' : ['::', '$', '@'] }
 
 " Ctrl-P Config
 let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_custom_ignore = 'node_modules\|__pycache__\|DS_Store\|git\|vendor\|dist\|build\|pkgdata'
 
 " Airline Config
 set laststatus=2
