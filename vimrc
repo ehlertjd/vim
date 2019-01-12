@@ -48,29 +48,21 @@ set listchars=tab:▸\
 
 " Set mapleader
 let mapleader = "\<Space>"
+nmap \ <Space>
 
 " Global scripts
 source ~/.vim/scripts/global.vim
 
 " Python
-autocmd FileType python setlocal expandtab
-autocmd FileType python setlocal tabstop=8
-autocmd FileType python setlocal softtabstop=4
-autocmd FileType python setlocal shiftwidth=4
+autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
 autocmd FileType python source ~/.vim/scripts/python.vim
 
 " bash/sh
-autocmd Filetype sh setlocal expandtab
-autocmd Filetype sh setlocal tabstop=8
-autocmd Filetype sh setlocal softtabstop=4
-autocmd Filetype sh setlocal shiftwidth=4
+autocmd Filetype sh setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 " json
-autocmd Filetype json setlocal expandtab
-autocmd Filetype json setlocal tabstop=8
-autocmd Filetype json setlocal softtabstop=4
-autocmd Filetype json setlocal shiftwidth=4
+autocmd Filetype json setlocal expandtab tabstop=8 softtabstop=4 shiftwidth=4
 autocmd FileType json autocmd BufWritePre <buffer> :TrailerTrim
 
 " YouCompleteMe
@@ -78,7 +70,7 @@ let g:ycm_semantic_triggers = { 'r' : ['::', '$', '@'] }
 
 " Ctrl-P Config
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_custom_ignore = 'node_modules\|__pycache__\|DS_Store\|git\|vendor\|dist\|build\|pkgdata'
+let g:ctrlp_custom_ignore = 'node_modules\|__pycache__\|DS_Store\|git\|vendor\|dist\|build\|pkgdata\|*.pyc'
 
 " Airline Config
 set laststatus=2
@@ -96,29 +88,22 @@ autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
 
 " matlab config
-autocmd FileType matlab setlocal expandtab
-autocmd FileType matlab setlocal tabstop=4
-autocmd FileType matlab setlocal softtabstop=4
-autocmd FileType matlab setlocal shiftwidth=4
+autocmd FileType matlab setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType matlab let g:ycm_seed_identifiers_with_syntax = 1
 
 " yaml config
-autocmd FileType yaml setlocal expandtab
-autocmd FileType yaml setlocal tabstop=2
-autocmd FileType yaml setlocal softtabstop=2
-autocmd FileType yaml setlocal shiftwidth=2
+autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml autocmd BufWritePre <buffer> :TrailerTrim
 
 " javascript config
-autocmd FileType javascript setlocal expandtab
-autocmd FileType javascript setlocal tabstop=2
-autocmd FileType javascript setlocal softtabstop=2
-autocmd FileType javascript setlocal shiftwidth=2
+autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript autocmd BufWritePre <buffer> :TrailerTrim
 
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
+nmap <leader>s2 :setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2<CR>
+nmap <leader>s4 :setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
