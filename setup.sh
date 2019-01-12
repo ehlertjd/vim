@@ -1,11 +1,13 @@
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
 mkdir -p backup
-git submodule init
-git submodule update
-vim +BundleInstall +qall
-cd ~/.vim/bundle/YouCompleteMe
+mkdir -p plugged
+mkdir -p autoload
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
+cd ~/.vim/plugged/YouCompleteMe
 ./install.sh --go-completer
-cd ~/.vim/bundle/tern_for_vim
+cd ~/.vim/plugged/tern_for_vim
 npm install
 

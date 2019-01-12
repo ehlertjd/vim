@@ -1,28 +1,23 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-
 " Plugin Bundles
-Plugin 'kien/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-fugitive'
-Plugin 'jelera/vim-javascript-syntax'
-Plugin 'fatih/vim-go'
-Plugin 'valloric/youcompleteme'
-Plugin 'lazywei/vim-matlab'
-Plugin 'jalvesaq/Nvim-R'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'w0rp/ale'
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'marijnh/tern_for_vim'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
+Plug 'jelera/vim-javascript-syntax'
+Plug 'fatih/vim-go'
+Plug 'valloric/youcompleteme'
+Plug 'lazywei/vim-matlab'
+Plug 'jalvesaq/Nvim-R'
+Plug 'csexton/trailertrash.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale'
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 :colorscheme moss
