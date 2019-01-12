@@ -4,7 +4,6 @@ filetype off
 " Plugin Bundles
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
-Plug 'flazz/vim-colorschemes'
 Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
@@ -16,11 +15,13 @@ Plug 'jalvesaq/Nvim-R'
 Plug 'csexton/trailertrash.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
+Plug 'srcery-colors/srcery-vim'
 
 call plug#end()
 filetype plugin indent on
 
-:colorscheme moss
+set termguicolors
+colorscheme srcery
 
 set autoindent
 set noexpandtab
