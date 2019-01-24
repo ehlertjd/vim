@@ -7,6 +7,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
+Plug 'tpope/vim-rhubarb'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'fatih/vim-go'
 Plug 'valloric/youcompleteme'
