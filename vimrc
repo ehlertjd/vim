@@ -28,6 +28,7 @@ set autoindent
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
+set cc=100
 
 set backupdir=~/.vim/backup//
 
@@ -95,6 +96,9 @@ autocmd FileType yaml autocmd BufWritePre <buffer> :TrailerTrim
 " javascript config
 autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript autocmd BufWritePre <buffer> :TrailerTrim
+
+" condor python config
+au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
 
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
