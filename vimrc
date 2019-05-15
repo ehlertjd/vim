@@ -105,6 +105,7 @@ nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
 nmap <leader>s2 :setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2<CR>
 nmap <leader>s4 :setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
+nmap <leader>tb :setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
