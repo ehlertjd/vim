@@ -8,6 +8,7 @@ Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'fatih/vim-go'
 Plug 'valloric/youcompleteme'
@@ -17,6 +18,9 @@ Plug 'csexton/trailertrash.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'w0rp/ale'
 Plug 'srcery-colors/srcery-vim'
+Plug 'towolf/vim-helm'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 filetype plugin indent on
@@ -31,6 +35,7 @@ set shiftwidth=4
 set cc=100
 
 set backupdir=~/.vim/backup//
+set directory=~/.vim/swapfiles//
 
 set wildignore+=*/ext/*,*/build/*,*.zip
 set wildignore+=*/build-*/*
@@ -55,6 +60,10 @@ source ~/.vim/scripts/global.vim
 autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
 autocmd FileType python source ~/.vim/scripts/python.vim
+
+" Robot
+autocmd BufRead,BufNewFile *.robot setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+autocmd BufRead,BufNewFile *.robot autocmd BufWritePre <buffer> :TrailerTrim
 
 " bash/sh
 autocmd Filetype sh setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
@@ -93,6 +102,10 @@ autocmd FileType matlab let g:ycm_seed_identifiers_with_syntax = 1
 autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml autocmd BufWritePre <buffer> :TrailerTrim
 
+" helm config
+autocmd FileType helm setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType helm autocmd BufWritePre <buffer> :TrailerTrim
+
 " javascript config
 autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript autocmd BufWritePre <buffer> :TrailerTrim
@@ -106,6 +119,8 @@ nmap <leader>h :bprevious<CR>
 nmap <leader>s2 :setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2<CR>
 nmap <leader>s4 :setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
 nmap <leader>tb :setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
+nmap <leader>so :syntax off<CR>
+nmap <leader>tt :TrailerTrim<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
