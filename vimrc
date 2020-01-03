@@ -8,6 +8,7 @@ Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-dispatch'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'fatih/vim-go'
@@ -110,8 +111,16 @@ autocmd FileType helm autocmd BufWritePre <buffer> :TrailerTrim
 autocmd FileType javascript setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript autocmd BufWritePre <buffer> :TrailerTrim
 
+" terraform config
+autocmd FileType terraform setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType terraform autocmd BufWritePre <buffer> :TrailerTrim
+let g:terraform_fmt_on_save=1
+
 " condor python config
 au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
+
+" gitlab ci shortcuts
+au BufRead,BufNewFile,BufEnter .gitlab-ci.yml nmap <leader>gl :Dispatch lab ci lint<CR>
 
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
@@ -121,6 +130,7 @@ nmap <leader>s4 :setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
 nmap <leader>tb :setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4<CR>
 nmap <leader>so :syntax off<CR>
 nmap <leader>tt :TrailerTrim<CR>
+nmap <leader>cl :cclose<CR>
 
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
