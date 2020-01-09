@@ -9,6 +9,8 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'fatih/vim-go'
