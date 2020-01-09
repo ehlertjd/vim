@@ -15,15 +15,7 @@ fi
     echo Installing apt-vim; 
     curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh; 
  fi;
-
-if [ ! -d ~/.vim/plugged/YouCompleteMe ]; then
-    echo installing YouCompleteMe
-    git clone https://github.com/ycm-core/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
-    cd ~/.vim/plugged/YouCompleteMe
-    git submodule update --init --recursive
-    cd -
-fi
-
+ 
 ln -s ~/.vim/vimrc ~/.vimrc
 cd ~/.vim
 mkdir -p backup
@@ -44,3 +36,4 @@ npm install
 cd -
 curl -fLo ~/.vim/colors/srcery.vim https://raw.githubusercontent.com/srcery-colors/srcery-vim/master/colors/srcery.vim 
 cp ./scripts ~/.vim/scripts
+
