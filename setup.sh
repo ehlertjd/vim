@@ -16,12 +16,6 @@ fi
     curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh; 
  fi;
 
-
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then 
-    echo installing Vundle
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
 if [ ! -d ~/.vim/plugged/YouCompleteMe ]; then
     echo installing YouCompleteMe
     git clone https://github.com/ycm-core/YouCompleteMe.git ~/.vim/plugged/YouCompleteMe
