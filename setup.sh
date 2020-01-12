@@ -2,6 +2,11 @@
 # Prereqs
 
 
+if [ ! -x  "$(command -v vim)" ]; then 
+   echo you need vim installed
+   exit 1
+fi
+
 if [ ! -x  "$(command -v go)" ]; then 
     echo you might want to install golang
 fi
@@ -15,8 +20,9 @@ fi
     echo Installing apt-vim; 
     curl -sL https://raw.githubusercontent.com/egalpin/apt-vim/master/install.sh | sh; 
  fi;
- 
-ln -s ~/.vim/vimrc ~/.vimrc
+
+cp ~/.vimrc ~/.vimrc.bac.$(date +%d)
+cp vimrc ~/.vimrc
 cd ~/.vim
 mkdir -p backup
 mkdir -p plugged
@@ -35,5 +41,5 @@ cd ~/.vim/plugged/tern_for_vim
 npm install
 cd -
 curl -fLo ~/.vim/colors/srcery.vim https://raw.githubusercontent.com/srcery-colors/srcery-vim/master/colors/srcery.vim 
-cp ./scripts ~/.vim/scripts
+cp ./scripts/* ~/.vim/scripts
 
