@@ -124,6 +124,9 @@ au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabs
 " gitlab ci shortcuts
 au BufRead,BufNewFile,BufEnter .gitlab-ci.yml nmap <leader>gl :Dispatch lab ci lint<CR>
 
+" Jenkinsfile config
+au BufRead,BufNewFile,BufEnter Jenkinsfile setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
 nmap <leader>h :bprevious<CR>
