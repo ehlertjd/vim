@@ -8,6 +8,3 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 cd ~/.vim/plugged/YouCompleteMe
 ./install.sh --go-completer
-cd ~/.vim/plugged/tern_for_vim
-npm install
-

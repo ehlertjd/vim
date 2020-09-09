@@ -4,7 +4,6 @@ filetype off
 " Plugin Bundles
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
-Plug 'marijnh/tern_for_vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-rhubarb'
@@ -24,18 +23,24 @@ Plug 'srcery-colors/srcery-vim'
 Plug 'towolf/vim-helm'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'hashivim/vim-terraform'
+Plug 'psf/black'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 filetype plugin indent on
 
 set termguicolors
+let g:srcery_transparent_background = 1
 colorscheme srcery
+let g:airline_theme = 'srcery'
 
 set autoindent
 set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set cc=100
+set fillchars+=vert:│
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swapfiles//
@@ -43,6 +48,9 @@ set directory=~/.vim/swapfiles//
 set wildignore+=*/ext/*,*/build/*,*.zip
 set wildignore+=*/build-*/*
 set wildignore+=*/bin/*,*/node_modules/*
+
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<c-j>"
 
 set number relativenumber
 
@@ -61,7 +69,9 @@ source ~/.vim/scripts/global.vim
 
 " Python
 autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
+" autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
+"autocmd FileType python autocmd BufWritePre <buffer> :Black
+autocmd BufWritePre *.py execute ':Black'
 autocmd FileType python source ~/.vim/scripts/python.vim
 
 " Robot
@@ -125,7 +135,7 @@ au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabs
 au BufRead,BufNewFile,BufEnter .gitlab-ci.yml nmap <leader>gl :Dispatch lab ci lint<CR>
 
 " Jenkinsfile config
-au BufRead,BufNewFile,BufEnter Jenkinsfile setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
+au BufRead,BufNewFile,BufEnter Jenkinsfile setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4 ft=groovy
 
 " keyboard shortcuts
 nmap <leader>l :bnext<CR>
