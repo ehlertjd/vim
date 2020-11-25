@@ -67,13 +67,6 @@ nmap \ <Space>
 " Global scripts
 source ~/.vim/scripts/global.vim
 
-" Python
-autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
-" autocmd FileType python autocmd BufWritePre <buffer> :TrailerTrim
-"autocmd FileType python autocmd BufWritePre <buffer> :Black
-autocmd BufWritePre *.py execute ':Black'
-autocmd FileType python source ~/.vim/scripts/python.vim
-
 " Robot
 autocmd BufRead,BufNewFile *.robot setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4
 autocmd BufRead,BufNewFile *.robot autocmd BufWritePre <buffer> :TrailerTrim
@@ -114,6 +107,8 @@ autocmd FileType matlab let g:ycm_seed_identifiers_with_syntax = 1
 " yaml config
 autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType yaml autocmd BufWritePre <buffer> :TrailerTrim
+" sops secrets config
+au BufRead,BufNewFile,BufEnter */secrets.yaml setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
 " helm config
 autocmd FileType helm setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
@@ -127,6 +122,10 @@ autocmd FileType javascript autocmd BufWritePre <buffer> :TrailerTrim
 autocmd FileType terraform setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType terraform autocmd BufWritePre <buffer> :TrailerTrim
 let g:terraform_fmt_on_save=1
+
+" markdown config
+autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType markdown autocmd BufWritePre <buffer> :TrailerTrim
 
 " condor python config
 au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
