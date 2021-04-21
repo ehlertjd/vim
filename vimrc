@@ -5,6 +5,7 @@ filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
+Plug 'tpope/vim-abolish',
 Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-dispatch'
@@ -26,12 +27,14 @@ Plug 'hashivim/vim-terraform'
 Plug 'psf/black'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'aklt/plantuml-syntax'
+Plug 'darrikonn/vim-isort', {'do': 'pip install --user isort'}
+Plug 'tenfyzhong/autoflake.vim', {'do': 'pip install --user autoflake'}
 
 call plug#end()
 filetype plugin indent on
 
 set termguicolors
-let g:srcery_transparent_background = 1
 colorscheme srcery
 let g:airline_theme = 'srcery'
 
@@ -126,6 +129,10 @@ let g:terraform_fmt_on_save=1
 " markdown config
 autocmd FileType markdown setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType markdown autocmd BufWritePre <buffer> :TrailerTrim
+
+" python config
+autocmd FileType python autocmd BufWritePre <buffer> :Autoflake
+autocmd FileType python autocmd BufWritePre <buffer> :Isort
 
 " condor python config
 au BufRead,BufNewFile,BufEnter */workspace/condor/*.py setlocal noexpandtab tabstop=4 softtabstop=4 shiftwidth=4
